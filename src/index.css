@@ -1,6 +1,8 @@
 @import 'tailwindcss/tailwind.css';
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --mint: #b7dbc8;
@@ -9,14 +11,21 @@
   --sea: #6da095;
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+    font-family:
+      "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer components {
+  .btn-primary {
+    @apply bg-teal text-white px-6 py-3 rounded-full hover:bg-sea transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-mint text-teal px-6 py-3 rounded-full hover:bg-mint/80 transition-colors;
+  }
 }
+
